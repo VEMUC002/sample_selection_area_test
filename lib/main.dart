@@ -30,7 +30,6 @@ class SelectionComparisonDemo extends StatefulWidget {
 }
 
 class _SelectionComparisonDemoState extends State<SelectionComparisonDemo> {
-  // Track the current hover position and if we're showing a preview
   Offset? _hoverPosition;
   String? _hoveredLink;
   String? _selectedLink;
@@ -198,7 +197,6 @@ class _SelectionComparisonDemoState extends State<SelectionComparisonDemo> {
             ),
           ),
 
-          // Link preview popup - fixed at bottom right
           if (_hoveredLink != null || _selectedLink != null)
             Positioned(
               right: 20,
@@ -224,7 +222,6 @@ class _SelectionComparisonDemoState extends State<SelectionComparisonDemo> {
     );
   }
 
-  // Link preview card
   Widget _buildLinkPreview(String url) {
     return Container(
       width: 300,
@@ -262,7 +259,6 @@ class _SelectionComparisonDemoState extends State<SelectionComparisonDemo> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  // In a real implementation, you would fetch the page title
                   'Preview for: ${url.split('//').last}',
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
@@ -273,7 +269,6 @@ class _SelectionComparisonDemoState extends State<SelectionComparisonDemo> {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  // In a real implementation, you would fetch the page description
                   'This is a preview of the link content. In a real app, you would fetch and display metadata from the URL.',
                   style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                   maxLines: 3,

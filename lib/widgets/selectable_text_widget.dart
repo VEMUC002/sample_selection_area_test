@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:selection_area_test/widgets/image_section_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SelectableTextWidget extends StatefulWidget {
@@ -81,7 +82,7 @@ class _SelectableTextWidgetState extends State<SelectableTextWidget> {
           const SizedBox(height: 16),
           const Text('Image selection test:', style: TextStyle(fontSize: 16)),
           const SizedBox(height: 8),
-          _buildImageSection(),
+          ImageSectionWidget(backgroundColor: widget.backgroundColor),
         ],
       ),
     );
@@ -158,59 +159,6 @@ class _SelectableTextWidgetState extends State<SelectableTextWidget> {
         SelectableText(
           '. Try selecting across widgets.',
           style: const TextStyle(fontSize: 16),
-        ),
-      ],
-    );
-  }
-
-  // Image section with captions
-  Widget _buildImageSection() {
-    return Row(
-      children: [
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: 200,
-                height: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: widget.backgroundColor,
-                ),
-                child: const Icon(Icons.landscape, size: 80),
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Nature landscape image with mountains and lakes',
-                style: TextStyle(fontSize: 12, color: Colors.grey),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(width: 16),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: 200,
-                height: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: widget.backgroundColor,
-                ),
-                child: const Icon(Icons.pets, size: 80),
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Cute puppy playing in the grass on a sunny day',
-                style: TextStyle(fontSize: 12, color: Colors.grey),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
         ),
       ],
     );
